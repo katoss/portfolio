@@ -35,7 +35,7 @@
                 </section>
                 <section class="detail-gallery">
                     {% for image in page.galleryImages %}
-                        <img src="{{ image }}" alt="{{ page.title }}" width="600px">
+                        <img src="{{ site.baseurl }}{{ image | prepend: '/' }}" alt="{{ page.title }}" width="600px">
                     {% endfor %}                
                 </section>
             </div>
