@@ -1,0 +1,12 @@
+title: Kati Kloppenborg - Portfolio
+description: ""
+url: "https://katoss.github.io/portfolio"
+baseurl: "/portfolio"
+author:
+  name: "Kati Kloppenborg"
+  email: "ka.kloppenborg@gmail.com"
+collections:
+  paintings:
+    output: true   # Ensure the pages for each painting are generated
+    permalink: /paintings/:name/
+markdown: kramdown
