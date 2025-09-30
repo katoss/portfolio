@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>About - Kati Kloppenborg</title>
-        <link rel="icon" type="image/x-icon" href="/assets/img/bee-icon-2.png">
+        <link rel="icon" type="image/ico" href="/assets/img/bee-icon.ico">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Cormorant+Unicase:wght@300;400;500;600;700&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
@@ -25,7 +25,7 @@
             </header>
         </div>
         <div id="content">
-            <div class="content-wrapper">     
+            <div class="content-wrapper-detail">     
                 <section class="detail-header">
                     <div class="description-block">
                         <h2>{{ page.title }}</h2>
@@ -35,8 +35,28 @@
                 </section>
                 <section class="detail-gallery">
                     {% for image in page.galleryImages %}
-                        <img src="{{ site.url }}{{ image }}" alt="{{ page.title }}" width="600px"  loading="lazy">
-                    {% endfor %}                
+                    <picture>
+                        <source 
+                        srcset="
+                            {{ site.url }}{{ image | replace: '.jpg', '-400.webp' | replace: '.png', '-400.webp' }} 400w,
+                            {{ site.url }}{{ image | replace: '.jpg', '-800.webp' | replace: '.png', '-800.webp' }} 800w,
+                            {{ site.url }}{{ image | replace: '.jpg', '-1200.webp' | replace: '.png', '-1200.webp' }} 1200w
+                        "
+                        type="image/webp"
+                        sizes="100vw">
+                        <img 
+                        src="{{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }}"
+                        srcset="
+                            {{ site.url }}{{ image | replace: '.jpg', '-400.jpg' | replace: '.png', '-400.png' }} 400w,
+                            {{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }} 800w,
+                            {{ site.url }}{{ image | replace: '.jpg', '-1200.jpg' | replace: '.png', '-1200.png' }} 1200w
+                        "
+                        sizes="100vw"
+                        alt="{{ page.title }}"
+                        loading="lazy"
+                        style="max-width: 1200px; width: 100%; height: auto;">
+                    </picture>
+                    {% endfor %}              
                 </section>
             </div>
         </div>

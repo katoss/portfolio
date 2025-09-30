@@ -99,14 +99,20 @@ a:hover {
     margin-bottom: 1rem;
 }
 
+.content-wrapper-detail {
+    max-width: 800px;   /* limit width */
+    margin: 0 auto;      /* center horizontally */
+    padding: 0 1rem;     /* keep some breathing room on small screens */
+}
+
 .detail-header {
     display: grid;
     grid-template-columns: 1fr 1fr; /* 2 columns: equal width */
     gap: 1rem; /* Add gap between columns */
     margin-top: 0.25rem;
     text-align: left;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .empty-block {
@@ -140,8 +146,8 @@ a:hover {
 .detail-gallery {
     margin-top: 0.25rem;
     text-align: left;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .detail-gallery > div {

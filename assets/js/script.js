@@ -24,7 +24,30 @@ function loadGallery() {
 function loadPainting(paintingId) {
     const painting = paintings[paintingId];
     if (painting) {
-        const galleryImages = painting.images.map(imgSrc => `<img src="${imgSrc}" width="600px">`).join('');
+        const galleryImages = painting.images.map(imgSrc => `
+            <picture>
+              <source 
+                srcset="
+                  ${imgSrc.replace('.jpg', '-400.webp')} 400w,
+                  ${imgSrc.replace('.jpg', '-800.webp')} 800w,
+                  ${imgSrc.replace('.jpg', '-1200.webp')} 1200w
+                "
+                type="image/webp"
+                sizes="100vw">
+              <img 
+                src="${imgSrc.replace('.jpg', '-800.jpg')}"
+                srcset="
+                  ${imgSrc.replace('.jpg', '-400.jpg')} 400w,
+                  ${imgSrc.replace('.jpg', '-800.jpg')} 800w,
+                  ${imgSrc.replace('.jpg', '-1200.jpg')} 1200w
+                "
+                sizes="100vw"
+                alt="${painting.title}"
+                loading="lazy"
+                style="max-width: 1200px; width: 100%; height: auto;">
+            </picture>
+        `).join('');
+
         document.getElementById('content').innerHTML = `
             <div class="content-wrapper">
                 <section class="detail-header">
