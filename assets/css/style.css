@@ -113,6 +113,7 @@ a:hover {
 .description-block p {
     display: block;
     max-width: 100%;
+    margin-bottom: 0.5rem;
 }
 
 .description-block > p {
@@ -191,6 +192,16 @@ a:hover {
 
 /* MOBILE VIEW */
 @media (max-width: 48rem) {
+    .site-header .nav-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .image-gallery {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
     .image-gallery > div {
         columns: 2;
     }
@@ -207,7 +218,8 @@ a:hover {
 
     .detail-layout {
         flex-direction: column;
-        padding: 1rem;
+        padding: 0;
+        padding-top: 1rem;
     }
 
     .detail-header {
