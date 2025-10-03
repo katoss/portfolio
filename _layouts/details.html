@@ -11,52 +11,47 @@
         <link rel="stylesheet" href="/assets/css/style.css">
     </head>
     <body>
-        <div id="header">
-            <!-- You can include the header content here or keep it separate -->
-            <header>
-                <div class="container">
-                    <nav class="navbar">
-                        <a href="/" class="artist"><h2 id="siteheading">Kati Kloppenborg</h2></a>
-                        <ul class="nav-menu">
-                            <li class="nav-link"><a href="/about.html">Infos</a></li>
-                        </ul>
-                    </nav>
-                </div>
-            </header>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="nav-container">
+        <a href="/" class="site-title">Kati Kloppenborg</a>
+        <nav class="nav-menu">
+            <a href="/about.html">Infos</a>
+        </nav>
         </div>
-        <div id="content">
-            <div class="content-wrapper-detail">     
-                <section class="detail-header">
-                    <div class="description-block">
-                        <h2>{{ page.title }}</h2>
-                        <p>{{ page.description }}</p>
-                        <p>{{ page.size }}</p>
-                    </div>
-                </section>
-                <section class="detail-gallery">
-                    {% for image in page.galleryImages %}
-                    <picture>
-                        <source 
-                        srcset="
-                            {{ site.url }}{{ image | replace: '.jpg', '-400.webp' | replace: '.png', '-400.webp' }} 400w,
-                            {{ site.url }}{{ image | replace: '.jpg', '-800.webp' | replace: '.png', '-800.webp' }} 800w,
-                        "
-                        type="image/webp"
-                        sizes="100vw">
-                        <img 
-                        src="{{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }}"
-                        srcset="
-                            {{ site.url }}{{ image | replace: '.jpg', '-400.jpg' | replace: '.png', '-400.png' }} 400w,
-                            {{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }} 800w,
-                        "
-                        sizes="100vw"
-                        alt="{{ page.title }}"
-                        loading="lazy"
-                        style="max-width: 800px; width: 100%; height: auto;">
-                    </picture>
-                    {% endfor %}              
-                </section>
-            </div>
+    </header>
+
+    <div class="detail-layout">
+        <!-- Sidebar -->
+        <aside class="detail-sidebar">
+        <div class="description-block">
+            <h2>{{ page.title }}</h2>
+            <p>{{ page.description }}</p>
+            <p>{{ page.size }}</p>
         </div>
+        </aside>
+
+        <!-- Gallery -->
+        <main class="detail-gallery">
+        {% for image in page.galleryImages %}
+        <picture>
+            <source 
+            srcset="{{ site.url }}{{ image | replace: '.jpg', '-400.webp' | replace: '.png', '-400.webp' }} 400w,
+                    {{ site.url }}{{ image | replace: '.jpg', '-800.webp' | replace: '.png', '-800.webp' }} 800w"
+            type="image/webp"
+            sizes="(max-width: 48rem) 100vw, calc(100vw - 250px)">
+            <img 
+            src="{{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }}"
+            srcset="{{ site.url }}{{ image | replace: '.jpg', '-400.jpg' | replace: '.png', '-400.png' }} 400w,
+                    {{ site.url }}{{ image | replace: '.jpg', '-800.jpg' | replace: '.png', '-800.png' }} 800w"
+            sizes="(max-width: 48rem) 100vw, calc(100vw - 250px)"
+            alt="{{ page.title }}"
+            loading="lazy">
+        </picture>
+        {% endfor %}
+        </main>
+    </div>
+    <footer class="site-footer">
+        <p>© 2025 Kati Kloppenborg. All rights reserved.</p>
+    </footer>
     </body>
-</html>

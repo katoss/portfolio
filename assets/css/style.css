@@ -3,26 +3,16 @@
     margin: 0;
 }
 
-header {
-    position: fixed;
-    width: 100%;
-    max-width: 1980px;
-}
-
 body {
-    max-width: 1980px;
     margin: 0 auto;
     font-family: 'Open Sans';
     font-weight: 200;
-}
-
-li {
-    list-style: none;
+    max-width: 1400px;
 }
 
 a {
-    color: black;
-    text-decoration: none;  
+    text-decoration: none;
+    color:black
 }
 
 a:hover {
@@ -30,30 +20,147 @@ a:hover {
     text-decoration: none;  
 }
 
-.container {
-    width: 100%;
-    margin: auto;
-    padding: 0.75rem 0rem 0rem 0.75rem;
+/* HEADER */
+.site-header {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.navbar {
-    width: 98%;
-    margin: auto;
-    display: flex;
-    justify-content: space-between;
+.site-header .nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .nav-menu {
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    margin: 0.5rem 1.25rem 0rem 0rem;
     align-items: baseline;
     font-family: 'Cormorant Unicase', 'Arial Narrow', Arial, sans-serif;
     font-size: x-large;
     font-weight: 900;
 }
 
+.nav-menu a {
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 700;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+.nav-menu a:hover {
+    color: lightpink;
+}
+
+.site-title {
+  font-family: 'Cormorant Unicase', serif;
+  font-weight: 900;
+  font-size: 2rem;
+  text-decoration: none;
+  color: black;
+}
+
+/* HOME PAGE */
+.image-gallery {
+    margin-top: 1rem;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-bottom: 2rem;
+}
+
+.image-gallery > div {
+    columns: 3;
+    gap: 1rem;
+    padding-top: 3.5rem;
+}
+
+.image-gallery img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+/* DETAIL PAGES */
+.detail-sidebar {
+  width: fit-content;
+  position: sticky;
+  top: 1rem;
+  flex-shrink: 0;
+  align-self: flex-start;
+  padding: 1rem;
+  padding-right: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.description-block {
+    grid-column: 1 / 2; /* Stack the description over the first image */
+    margin-top: 3rem;
+}
+
+.description-block h2,
+.description-block p {
+    display: block;
+    max-width: 100%;
+}
+
+.description-block > p {
+    font-family: 'Open Sans', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+}
+
+.description-block > h2 {
+    font-family: 'Cormorant Unicase', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 500;
+    font-size: x-large;
+}
+
+.detail-gallery {
+    flex: 1;
+    margin-top: 4rem;
+    text-align: left;
+    margin-right: 1rem;
+    margin-top: 4rem;
+    overflow-y: auto; /* makes gallery scrollable */
+    padding-left: 3rem;
+}
+
+.detail-gallery picture {
+  display: block;
+  text-align: center;
+}
+
+.detail-gallery > div {
+    columns: 2;
+    gap: 0;
+}
+
+.detail-gallery img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    height: auto;
+    display: inline-block;
+}
+
+.detail-layout {
+  display: flex;
+  margin: 0 auto;
+  padding-top: 2rem;
+}
+
+/* ABOUT PAGE */
 .contact {
     font-family: 'Cormorant Unicase';
     font-size: xx-large;
@@ -72,108 +179,49 @@ a:hover {
     padding-top: 12rem;
 }
 
-#siteheading {
-    position: fixed;
-    text-align: left;
-    font-size: xx-large;
-    font-family: 'Cormorant Unicase', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 900;
+/* FOOTER */
+.site-footer {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.85rem;
+  color: #666;
+  margin: 2rem 0;   
 }
 
-.image-gallery {
-    margin-top: 0.25rem;
-    text-align: center;
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-
-.image-gallery > div {
-    columns: 3;
-    gap: 1rem;
-    padding-top: 3.5rem;
-}
-
-.image-gallery img {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
-.content-wrapper-detail {
-    max-width: 800px;   /* limit width */
-    margin: 0 auto;      /* center horizontally */
-    padding: 0 1rem;     /* keep some breathing room on small screens */
-}
-
-.detail-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* 2 columns: equal width */
-    gap: 1rem; /* Add gap between columns */
-    margin-top: 0.25rem;
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.empty-block {
-    grid-column: 1 / 2; /* Left column */
-    padding-top: 1rem;
-}
-
-.description-block {
-    grid-column: 1 / 2; /* Stack the description over the first image */
-    margin-top: 3rem;
-}
-
-.description-block h2,
-.description-block p {
-    display: block;
-    max-width: 70%;
-    margin-top: 1rem;
-}
-
-.description-block > p {
-    font-family: 'Open Sans', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 200;
-}
-
-.description-block > h2 {
-    font-family: 'Cormorant Unicase', 'Arial Narrow', Arial, sans-serif;
-    font-weight: 500;
-    font-size: x-large;
-}
-
-.detail-gallery {
-    margin-top: 0.25rem;
-    text-align: left;
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.detail-gallery > div {
-    columns: 2;
-    gap: 1rem;
-    padding-top: 0.5rem;
-}
-
-.detail-gallery img {
-    display: block;
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
+/* MOBILE VIEW */
 @media (max-width: 48rem) {
     .image-gallery > div {
         columns: 2;
     }
+
+    .detail-gallery {
+        margin: 0;
+        margin-top: 1rem;
+        padding: 0;
+        overflow: visible;
+    }
+
     .detail-gallery > div {
         columns: 1;
     }
-    .detail-header {
-        grid-template-columns: 1fr; /* Switch to 1 column layout */
+
+    .detail-layout {
+        flex-direction: column;
+        padding: 1rem;
     }
+
+    .detail-header {
+        grid-template-columns: 1fr; 
+    }
+
     .description-block p {
         max-width: 100%;
+    }
+
+    .detail-sidebar {
+        position: static;
+        width: fit-content;
+        padding: 0;
     }
 }
 
@@ -182,3 +230,10 @@ a:hover {
         columns: 1;
     }
 }
+
+
+
+
+
+
+

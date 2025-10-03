@@ -9,16 +9,14 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body>
-    <div id="header"><header>
-<div class="container">
-    <nav class="navbar">
-        <a href="/" class="artist"><h2 id="siteheading">Kati Kloppenborg</h2></a>
-        <ul class="nav-menu">
-            <li class="nav-link"><a href="/about.html">Infos</a></li>
-        </ul>
-    </nav>
-</div>
-</header></div>
+    <header class="site-header">
+        <div class="nav-container">
+        <a href="/" class="site-title">Kati Kloppenborg</a>
+        <nav class="nav-menu">
+            <a href="/about.html">Infos</a>
+        </nav>
+        </div>
+    </header>
     <div id="content">
         <div class="content-wrapper">
             <section class="image-gallery">
@@ -34,7 +32,7 @@
                     src="/assets/img/montgallet-800.png"
                     srcset="/assets/img/montgallet-400.png 400w,
                             /assets/img/montgallet-800.png 800w"
-                    sizes="(max-width: 32rem) 100vw, (max-width: 48rem) 50vw, 33vw"
+                    sizes="(max-width: 32rem) 100vw, (max-width: 48rem) 50vw"
                     alt="Valentines in Montgallet station"
                     loading="lazy"
                     style="height:auto;">
@@ -296,5 +294,8 @@
             </section>
         </div>
     </div>
+    <footer class="site-footer">
+        <p>© 2025 Kati Kloppenborg. All rights reserved.</p>
+    </footer>
 </body>
 </html>
