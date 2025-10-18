@@ -1,6 +1,6 @@
 ---
 layout: details
-title: "That blouse"
+title: "Blouse"
 description: "2020"
 size: "21x29,7cm gouache, crayon and marker on paper"
 galleryImages:

@@ -1,6 +1,6 @@
 ---
 layout: details
-title: "Smiley"
+title: "Smile"
 description: "2021"
 size: "14,8x21cm gouache on paper"
 galleryImages:

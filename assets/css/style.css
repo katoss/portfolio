@@ -243,6 +243,34 @@ a:hover {
     }
 }
 
+@media (max-width: 25rem) {
+    .nav-menu a {
+        font-size: 1.75rem;
+    }
+
+    .site-title {
+        font-size: 1.75rem;
+    }
+
+    .image-gallery > div {
+    padding-top: 2.5rem;
+    }
+
+    .detail-layout {
+    padding-top: 0.5rem;
+    }
+}
+
+@media (max-width: 20rem) {
+    .nav-menu a {
+        font-size: 1.5rem;
+    }
+
+    .site-title {
+        font-size: 1.5rem;
+    }
+}
+
 
 
 
